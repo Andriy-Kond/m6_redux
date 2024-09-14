@@ -1,7 +1,7 @@
 import { combineReducers, createStore } from "redux";
 import { devToolsEnhancer } from "@redux-devtools/extension";
-import { rootReducer, tasksReducer } from "./tasks/reducer";
-import { filtersReducer } from "./filters/reducer";
+import { tasksReducer } from "./tasks/reducer";
+import { filtersReducer, rootReducer } from "./filters/reducer";
 
 // const initialState = {
 //   tasks: [

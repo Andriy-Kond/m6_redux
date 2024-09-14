@@ -53,3 +53,23 @@ export const rootReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+// import { statusFilters } from "./constants";
+
+// const filterInitialState = {
+//   status: statusFilters.all,
+// };
+// export const filtersReducer = (state = filterInitialState, action) => {
+//   switch (action.type) {
+//     case "filter/setFilter":
+//       return {
+//         ...state,
+//         filters: {
+//           ...state.filters,
+//           status: action.payload,
+//         },
+//       };
+//     default:
+//       return state;
+//   }
+// };
