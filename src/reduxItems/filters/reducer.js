@@ -1,10 +1,12 @@
 import { statusFilters } from "./constants";
+import { setStatusFilter } from "./actions";
+import { createReducer } from "@reduxjs/toolkit";
 
 const filtersInitialState = {
   status: statusFilters.all,
 };
 
-export const filtersReducer = (state = filtersInitialState, action) => {
+export const filtersReducerVanilla = (state = filtersInitialState, action) => {
   switch (action.type) {
     case "filter/setFilter":
       return {
@@ -15,6 +17,21 @@ export const filtersReducer = (state = filtersInitialState, action) => {
       return state;
   }
 };
+
+///////// Redux Toolkit: //////////
+export const filtersReducer = createReducer(filtersInitialState, {
+  [setStatusFilter]: (state, action) => ({
+    ...state,
+    status: action.payload,
+  }),
+});
+
+// with using Immer:
+export const filtersReducerWithUsingImmer = createReducer(filtersInitialState, {
+  [setStatusFilter]: (state, action) => {
+    state.status = action.payload;
+  },
+});
 
 // export const rootReducer = (state = {}, action) => ({
 //   tasks: tasksReducer(state.tasks, action),

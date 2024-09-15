@@ -2,6 +2,7 @@ import { combineReducers, createStore } from "redux";
 import { devToolsEnhancer } from "@redux-devtools/extension";
 import { tasksReducer } from "./tasks/reducer";
 import { filtersReducer } from "./filters/reducer";
+import { configureStore } from "@reduxjs/toolkit";
 
 // const initialState = {
 //   tasks: [
@@ -29,13 +30,24 @@ import { filtersReducer } from "./filters/reducer";
 // };
 
 // Коротший варіант за допомогою функції combineReducers() з бібліотеки Redux
-const rootReducer = combineReducers({
+const rootReducerVanilla = combineReducers({
   tasks: tasksReducer,
   filters: filtersReducer,
 });
 
 const enhancer = devToolsEnhancer();
 
-const store = createStore(rootReducer, enhancer);
+const storeVanilla = createStore(rootReducerVanilla, enhancer);
+
+///////// Redux Toolkit: //////////
+// toolkit configureStore автоматично додає Redux DevTools + деякі додаткові перевірки
+// const store = configureStore({ reducer: rootReducer });
+// toolkit configureStore дозволяє автоматично створити кореневий редюсер (виконати combineReducers).
+const store = configureStore({
+  reducer: {
+    tasks: tasksReducer,
+    filters: filtersReducer,
+  },
+});
 
 export default store;
