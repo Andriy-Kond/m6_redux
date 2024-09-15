@@ -9,6 +9,7 @@ export const TaskCounter = () => {
 
   const tasksCount = tasks.reduce(
     (acc, task) => {
+      // opt1
       // switch (task) {
       //   case !task.completed:
       //     return (acc.active += 1);
@@ -18,6 +19,7 @@ export const TaskCounter = () => {
       //     return acc;
       // }
 
+      // opt2
       // if (task.completed) {
       //   acc.completed += 1;
       // } else {
@@ -25,6 +27,7 @@ export const TaskCounter = () => {
       // }
       // return acc;
 
+      // opt3
       task.completed ? (acc.completed += 1) : (acc.active += 1);
       return acc;
     },
