@@ -1,7 +1,7 @@
 import { combineReducers, createStore } from "redux";
 import { devToolsEnhancer } from "@redux-devtools/extension";
 import { tasksReducer } from "./tasks/reducer";
-import { filtersReducer, rootReducer } from "./filters/reducer";
+import { filtersReducer } from "./filters/reducer";
 
 // const initialState = {
 //   tasks: [
@@ -29,10 +29,10 @@ import { filtersReducer, rootReducer } from "./filters/reducer";
 // };
 
 // Коротший варіант за допомогою функції combineReducers() з бібліотеки Redux
-// const rootReducer = combineReducers({
-//   tasks: tasksReducer,
-//   filters: filtersReducer,
-// });
+const rootReducer = combineReducers({
+  tasks: tasksReducer,
+  filters: filtersReducer,
+});
 
 const enhancer = devToolsEnhancer();
 

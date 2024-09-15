@@ -6,8 +6,8 @@ import { getFilter } from "reduxItems/filters/selectors";
 import { setStatusFilter } from "reduxItems/filters/actions";
 
 export const StatusFilter = () => {
-  const filter = useSelector(state => state.filters.status);
-  // const filter = useSelector(getFilter);
+  // const filter = useSelector(state => state.filters.status);
+  const filter = useSelector(getFilter);
 
   const dispatch = useDispatch();
 
