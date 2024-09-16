@@ -1,8 +1,8 @@
 import { combineReducers, createStore } from "redux";
 import { devToolsEnhancer } from "@redux-devtools/extension";
-import { tasksReducer } from "./tasks/reducer";
-import { filtersReducer } from "./filters/reducer";
 import { configureStore } from "@reduxjs/toolkit";
+import { tasksReducer } from "./tasks/slice";
+import { filtersReducer } from "./filters/slice";
 
 // const initialState = {
 //   tasks: [
