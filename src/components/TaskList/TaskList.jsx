@@ -21,9 +21,11 @@ export const TaskList = () => {
   // const tasks = useSelector(state => state.tasks);
   // const statusFilter = useSelector(state => state.filter.status);
   const tasks = useSelector(getTasks);
+
   const statusFilter = useSelector(getFilter);
 
   const visibleTasks = getVisibleTasks(tasks, statusFilter);
+
   return (
     <ul className={css.list}>
       {visibleTasks.map(task => (
