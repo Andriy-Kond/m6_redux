@@ -32,9 +32,7 @@ const tasksSlice = createSlice({
 
       prepare(text) {
         return {
-          id: nanoid(),
-          text,
-          completed: false,
+          payload: { id: nanoid(), text, completed: false },
         };
       },
     },
