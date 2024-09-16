@@ -59,8 +59,7 @@ export const tasksReducer = createReducer(tasksInitialState, {
 
 // Редюсери повинні бути чистими функціями, що не змінюють поточний стан, а повертають новий. Але іноді це сильно ускладнює код, оскільки код іммутального оновлення стану може бути досить заплутаним.
 // Redux Toolkit «під капотом» використовує бібліотеку Immer, яка дозволяє писати код оновлення стану в редюсері так, ніби змінюючи стан:
-
-// & With using Immmer:
+// & With using Immer:
 export const tasksReducerWithUsingImmer = createReducer(tasksInitialState, {
   [addTask]: (state, action) => state.push(action.payload),
 

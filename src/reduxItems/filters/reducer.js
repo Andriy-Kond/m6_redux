@@ -19,6 +19,7 @@ export const filtersReducerVanilla = (state = filtersInitialState, action) => {
 };
 
 ///////// Redux Toolkit: //////////
+// & Without Immer
 export const filtersReducer = createReducer(filtersInitialState, {
   [setStatusFilter]: (state, action) => ({
     ...state,
@@ -26,23 +27,14 @@ export const filtersReducer = createReducer(filtersInitialState, {
   }),
 });
 
-// with using Immer:
+// & With using Immer:
 export const filtersReducerWithUsingImmer = createReducer(filtersInitialState, {
   [setStatusFilter]: (state, action) => {
     state.status = action.payload;
   },
 });
 
-// export const rootReducer = (state = {}, action) => ({
-//   tasks: tasksReducer(state.tasks, action),
-//   filters: filtersReducer(state.filters, action),
-// });
-
-// export const rootReducer = combineReducers({
-//   tasks: tasksReducer,
-//   filters: filtersReducer,
-// });
-
+// // vanilla:
 // import { statusFilters } from "./constants";
 
 // const initialState = {
@@ -98,3 +90,14 @@ export const filtersReducerWithUsingImmer = createReducer(filtersInitialState, {
 //       return state;
 //   }
 // };
+
+// export const rootReducer = (state = {}, action) => ({
+//   tasks: tasksReducer(state.tasks, action),
+//   filters: filtersReducer(state.filters, action),
+// });
+
+// або з використанням функції combineReducers():
+// export const rootReducer = combineReducers({
+//   tasks: tasksReducer,
+//   filters: filtersReducer,
+// });
