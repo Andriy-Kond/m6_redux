@@ -1,15 +1,19 @@
-import { Layout } from "components/Layout/Layout";
-import { AppBar } from "components/AppBar/AppBar";
-import { TaskForm } from "components/TaskForm/TaskForm";
-import { TaskList } from "components/TaskList/TaskList";
+import { Link, Route, Routes } from "react-router-dom";
+
+import { Layout } from "pages/Layout/Layout";
+import Tasks from "pages/Tasks";
+import Tests from "pages/Tests";
 
 function App() {
   return (
-    <Layout>
-      <AppBar />
-      <TaskForm />
-      <TaskList />
-    </Layout>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="Tasks/*" element={<Tasks />} />
+          <Route path="Tests/*" element={<Tests />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 
