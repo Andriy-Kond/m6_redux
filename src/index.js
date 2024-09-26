@@ -20,7 +20,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/m6_redux">
       <Provider store={store}>
         <App />
       </Provider>
